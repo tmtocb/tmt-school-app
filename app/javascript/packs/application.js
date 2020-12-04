@@ -11,6 +11,8 @@ require("channels")
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/css/bootstrap'
 require("stylesheets/application.scss")
+import "@fortawesome/fontawesome-free/css/all"
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
