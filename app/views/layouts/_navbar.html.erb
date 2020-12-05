@@ -22,7 +22,7 @@
           <%= link_to ' About', about_path, class: "nav-link fas fa-address-card fa-lg" %>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle fas fa-chevron-circle-down" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user %></a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to " Account settings", edit_user_registration_path, class: 'dropdown-item fas fa-user-edit' %>
             <%= link_to " Sign out", destroy_user_session_path, method: :delete, class: 'dropdown-item fas fa-sign-out-alt' %>
