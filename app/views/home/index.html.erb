@@ -1,3 +1,62 @@
-<i class="far fa-address-book"></i>
-<%= link_to '', root_path, class: "fab fa-github" %>
-<%= link_to 'Course', courses_path, class: "fas fa-torah btn btn-success" %>
+<div class="jumbotron">
+	<div class="display-4">
+What do you want to learn today?
+	</div>
+	<br>
+	<div class="form-inline.my2.my-lg-0">
+		<%= form_tag courses_path, method: :get, class: "form-inline my-2 my-lg-0" %> 
+      <%= text_field_tag :title, params[:title], class: "form-control mr-sm-2", placeholder: "Course name" %>
+      <p></p>
+      <%= submit_tag ("Search"), class: "btn btn-primary btn-sm my-2 my-sm-0" %> 
+	</div>
+</div>
+
+<div class="card-group">
+	<div class="card card-body">
+		<h5><i class="fas fa-graduation-cap"></i> <%= Course.count %> online courses</h5>
+		<div class="row">
+		Explore a variet of fresh topics
+		</div>
+	</div>
+	<div class="card card-body">
+	<h5><i class="fas fa-chalkboard-teacher"></i> <%= Course.distinct.count(:user_id) %> expert instructors</h5>
+	<div class="row">
+	Find the right instructor for you
+	</div>
+	</div>
+		<div class="card card-body">
+	<h5><i class="fas fa-user-graduate"></i> <%= User.count %> active learners</h5>
+	<div class="row">
+	Join the knowledge community
+	</div>
+	</div>
+			<div class="card card-body">
+	<h5><i class="fas fa-infinity"></i> Lifetime access</h5>
+	<div class="row">
+		Learn on your schedule
+	</div>
+	</div>
+</div>
+
+<hr>
+<h4>Popular courses</h4>
+<div class="card-columns">
+  <% @courses.each do |course| %>
+  <%= render 'courses/course', course: course %>
+  <% end %>
+</div>
+<hr>
+<h4>Top rated courses</h4>
+<div class="card-columns">
+  <% @courses.each do |course| %>
+  <%= render 'courses/course', course: course %>
+  <% end %>
+</div>
+<hr>
+<h4>Latest courses:</h4>
+<div class="card-columns">
+  <% @latest_courses.each do |course| %>
+  <%= render 'courses/course', course: course %>
+  <% end %>
+</div>
+<hr>
