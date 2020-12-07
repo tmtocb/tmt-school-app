@@ -1,5 +1,4 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
     <%= link_to "School App", root_path, class: 'navbar-brand' %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -15,6 +14,9 @@
         </li>
         <li class="nav-item">
           <%= link_to ' New Course', new_course_path, class: "nav-link far fa-plus-square fa-lg" %>
+        </li>
+                <li class="nav-item">
+          <%= link_to ' Users', users_path, class: "nav-link fas fa-user fa-lg" %>
         </li>
       </ul>
       <%= form_tag courses_path, method: :get, class: "form-inline my-2 my-lg-0" %> 
@@ -41,5 +43,4 @@
       </ul>
       <% end %>
     </div>
-  </div>
 </nav>
