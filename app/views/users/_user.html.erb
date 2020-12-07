@@ -4,7 +4,7 @@
     <%= user.email %>
   </div>
   <div class="card-footer">
-	<i class="far fa-clock"></i> Created: <%= time_ago_in_words(user.created_at) %>
+	  <i class="far fa-clock"></i> Created: <%= time_ago_in_words(user.created_at) %>
   <div class="row">
     Log-in counter: <%= user.sign_in_count %>
   </div>
@@ -12,13 +12,21 @@
     Current log-in time: <%= user.current_sign_in_at %>
   </div>
   <div class="row">
-    The last sign-in time: <%= user.last_sign_in_at  %>
+    Last sign-in time: <%= user.last_sign_in_at  %>
   </div>
   <div class="row">
     Current log-in IP: <%= user.current_sign_in_ip  %>
   </div>
   <div class="row">
-    The last sign-in IP: <%= user.last_sign_in_ip	%>
+    Last sign-in IP: <%= user.last_sign_in_ip	%>
+  </div>
+  <div class="row">
+    Confirmed e-mail?
+    <% if user.confirmed_at.present? %>
+         <span class="badge badge-success"> Yes</span>
+        <% else %>
+         <span class="badge badge-danger"> No</span>
+      <% end %>
   </div>
   </div>
 </div>
